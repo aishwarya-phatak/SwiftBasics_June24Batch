@@ -2,6 +2,44 @@ import UIKit
 
 //loops in Swift
 
+func addition(num1 : Int, num2 : Int)->Int{
+    return num1 + num2
+}
+
+
+var sum = 0
+var array1 = [34,5,23,67,3]
+array1.count //find out length of an array
+array1[3]    //access single element
+array1.forEach { x in
+    print(x)
+}
+
+//function definition
+func calculateSum(arr : Array<Int>)->Int{
+    for eachElement in arr{
+        sum = sum + eachElement
+    }
+    
+    print("Sum is :\(sum)")
+    return sum
+}
+
+var result = calculateSum(arr: array1)           //function call
+
+
+func findOddEven(arr : Array<Int>){
+    for eachElement in arr{
+        if(eachElement%2==0){
+            print("\(eachElement) is even")
+        } else {
+            print("\(eachElement) is odd")
+        }
+    }
+}
+
+findOddEven(arr: array1)
+
 //types of ranges
 var range1 = 1...10
 var range2 = 5..<20
@@ -31,7 +69,7 @@ func addition(a : Int, b : Int)->Int{
 }
 
 
-var result = addition(a: 10, b: 20)
+var result1 = addition(a: 10, b: 20)
 
 //1.write a function in swift to calculate sum of numbers in a range
 //2.write a function to check whether numbers are even or odd
@@ -102,3 +140,5 @@ for eachMusic in music {
 for i in oddNumbers{
     print(i)
 }
+
+
