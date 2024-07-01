@@ -105,6 +105,12 @@ switch numberFour{
 
 
 //classes In Swift
+
+//features of Swift language  -->
+
+//Swift does not support mutiple inheritance
+//Swift has heterogenous arrays
+//Swift has type inference
 class Student{
     var rollNumber : Int
     var name : String
@@ -135,3 +141,64 @@ struct Person{
 
 
 var p1 = Person(name: "Sambhaji", aadharNumber: "232345451212", bloodGroup: "A+")
+
+
+//Functions In Swift
+
+func addition(a : Int, b : Int)->Int{
+    return a + b
+}
+
+var result1 = addition(a: 30, b: 40)
+print(result1)
+
+
+var arr3 = [23,45,7,6,98]
+var sum = 0
+func sumOfElements(arr : [Int])->Int{
+    for eachElement in arr{
+        sum = sum + eachElement
+    }
+    return sum
+}
+
+var resultOfSum = sumOfElements(arr: arr3)
+print(resultOfSum)
+
+
+func checkEvenOdd(arr : [Int]){
+    for eachElement in arr{
+        if(eachElement%2 == 0){
+            print("Element is even \(eachElement)")
+        }else{
+            print("Element is odd \(eachElement)")
+        }
+    }
+}
+
+checkEvenOdd(arr: arr3)
+
+
+//for in stride loop
+//from to by --> the last number is excluded
+for x in stride(from: 10, to: 20, by: 2){
+    print(x)
+}
+
+//both are included
+for x in stride(from: 10, through: 50, by: 5){
+    print(x)
+}
+
+
+func closureImplementation(a : Int, b : Int, handler : ((Int, Int)->Int)){
+    
+}
+
+closureImplementation(a: 10, b: 13) { <#Int#>, <#Int#> in
+    <#code#>
+}
+
+//define empty arrays in Swift
+var arr6 = [String]()
+var arr7 : [Int] = []
