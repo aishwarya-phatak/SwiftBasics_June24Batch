@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var welcomeLabel : UILabel?
+    var userNameTextView : UITextView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,19 +36,19 @@ class ViewController: UIViewController {
     
     func initViews(){
         let rectForLabel = CGRect(x: 60, y: 100, width: 300, height: 50)
-        let welcomeLabel = UILabel(frame: rectForLabel)
-        welcomeLabel.text = "Welcome to iOS!"
-        welcomeLabel.textColor = .red
-        welcomeLabel.textAlignment = .center
-        welcomeLabel.backgroundColor = .lightGray
+        welcomeLabel = UILabel(frame: rectForLabel)
+        welcomeLabel!.text = "Welcome to iOS!"
+        welcomeLabel!.textColor = .red
+        welcomeLabel!.textAlignment = .center
+        welcomeLabel!.backgroundColor = .lightGray
         
-        self.view.addSubview(welcomeLabel)
+        self.view.addSubview(welcomeLabel!)
         
         let rectForEditText = CGRect(x: 60, y: 170, width: 300, height: 50)
-        let userNameTextView = UITextView(frame: rectForEditText)
-        userNameTextView.backgroundColor = .orange
+        userNameTextView = UITextView(frame: rectForEditText)
+        userNameTextView!.backgroundColor = .orange
         
-        self.view.addSubview(userNameTextView)
+        self.view.addSubview(userNameTextView!)
         
         let rectForEditText2 = CGRect(x: 60, y: 240, width: 300, height: 50)
         let passwordTextView = UITextView(frame: rectForEditText2)
@@ -67,7 +70,17 @@ class ViewController: UIViewController {
     @objc func btnClick(){
         print("Btn Login clicked")
         
+//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+//        
+//        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
+    
+    @IBAction func btnAdd(_ sender: Any) {
+        
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        secondViewController.nameContainer = self.userNameTextView?.text
         
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }

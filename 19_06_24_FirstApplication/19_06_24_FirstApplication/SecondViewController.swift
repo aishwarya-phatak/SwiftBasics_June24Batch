@@ -8,10 +8,16 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    @IBOutlet weak var welcomeMessageLabel: UILabel!
+    var nameContainer : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print("View Did Load of Second View Controller Called")
+        
+        navigationItem.hidesBackButton = true
         initViews()
     }
     
@@ -39,5 +45,13 @@ class SecondViewController: UIViewController {
         welcomeLabel1.backgroundColor = .orange
         
         self.view.addSubview(welcomeLabel1)
+        
+        self.welcomeMessageLabel.text = nameContainer
+        welcomeMessageLabel.backgroundColor = .cyan
+    }
+    
+    @IBAction func btnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
     }
 }
